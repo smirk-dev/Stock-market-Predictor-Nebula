@@ -1,0 +1,74 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.dashboardContent {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.selectorRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mainContent {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+}
+
+.chartSection {
+  flex: 1;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.sidePanel {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .mainContent {
+    flex-direction: column;
+  }
+  
+  .sidePanel {
+    width: 100%;
+    flex-direction: row;
+  }
+  
+  .sidePanel > * {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardContent {
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  .sidePanel {
+    flex-direction: column;
+  }
+  
+  .sidePanel > * {
+    width: 100%;
+  }
+}
