@@ -1,0 +1,234 @@
+.stockSelector {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.selectedStocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: var(--glass-background);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  min-height: 52px;
+}
+
+.stockTag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--primary);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: default;
+}
+
+.removeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.removeButton:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.searchContainer {
+  position: relative;
+  flex: 1;
+  min-width: 160px;
+}
+
+.searchInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--ui-element);
+  border-radius: 20px;
+  transition: background 0.2s ease;
+}
+
+.searchInputWrapper:focus-within {
+  background: var(--ui-element-hover);
+}
+
+.searchIcon {
+  color: var(--neutral-500);
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.875rem;
+  color: var(--text);
+  width: 100%;
+  padding: 4px 0;
+}
+
+.searchInput::placeholder {
+  color: var(--neutral-400);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: max(200px, 100%);
+  background: var(--glass-background);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+  max-height: 320px;
+  overflow-y: auto;
+  animation: fadeIn 0.2s ease;
+}
+
+.dropdownSection {
+  padding: 12px;
+}
+
+.dropdownSection + .dropdownSection {
+  border-top: 1px solid var(--glass-border);
+}
+
+.dropdownTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--neutral-500);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdownList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.875rem;
+  transition: background 0.2s ease;
+  text-align: left;
+}
+
+.dropdownItem:hover {
+  background: var(--ui-element);
+}
+
+.dropdownItem:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.addIcon {
+  color: var(--primary);
+}
+
+.noResults {
+  padding: 12px;
+  color: var(--neutral-400);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.categoriesSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tagIcon {
+  color: var(--neutral-500);
+}
+
+.categories {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 4px;
+}
+
+.categories::-webkit-scrollbar {
+  display: none;
+}
+
+.category {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--ui-element);
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.category:hover {
+  background: var(--ui-element-hover);
+}
+
+.category.active {
+  background: var(--primary);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .stockSelector {
+    gap: 12px;
+  }
+  
+  .selectedStocks {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoriesSection {
+    overflow-x: auto;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .categoriesSection::-webkit-scrollbar {
+    display: none;
+  }
+}

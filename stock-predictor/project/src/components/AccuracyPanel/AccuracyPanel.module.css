@@ -1,0 +1,193 @@
+.accuracyPanel {
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.panelTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.modelSelector {
+  display: flex;
+  background: var(--ui-element);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.modelButton {
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.modelButton.active {
+  background: var(--primary);
+  color: white;
+}
+
+.emptyState {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--neutral-400);
+  text-align: center;
+  padding: 24px;
+  gap: 12px;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.metricCard {
+  background: var(--ui-element);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.metricIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--glass-background);
+  color: var(--primary);
+}
+
+.metricContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.metricTitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--neutral-500);
+  margin: 0 0 4px 0;
+}
+
+.metricValue {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.accuracyIndicator {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+}
+
+.accuracyIndicator.excellent {
+  background: linear-gradient(135deg, var(--success) 0%, #10b981 100%);
+}
+
+.accuracyIndicator.good {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.accuracyIndicator.average {
+  background: linear-gradient(135deg, var(--warning) 0%, #d97706 100%);
+}
+
+.accuracyIndicator.poor {
+  background: linear-gradient(135deg, var(--error) 0%, #dc2626 100%);
+}
+
+.accuracyValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.accuracyLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.backtestSection {
+  margin-top: auto;
+}
+
+.sectionTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.backtestInfo {
+  background: var(--ui-element);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.backtestResult {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  margin-bottom: 4px;
+}
+
+.backtestResult:last-child {
+  margin-bottom: 0;
+}
+
+.backtestLabel {
+  color: var(--neutral-500);
+}
+
+.backtestValue {
+  font-weight: 500;
+}
+
+.emptyBacktest {
+  background: var(--ui-element);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.75rem;
+  color: var(--neutral-400);
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .accuracyPanel {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .accuracyPanel {
+    max-height: none;
+  }
+}
